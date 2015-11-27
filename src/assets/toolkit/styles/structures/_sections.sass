@@ -8,12 +8,15 @@
 	:background $yellow
 	:color $black
 
-	& + &
-		:border-top 1px #EAC700 solid
+	& + .section--primary
+		:border-top 1px darken($yellow, 3%) solid
 
 .section--secondary
 	:background $black
 	:color rgba(255,255,255,0.9)
+
+	& + .section--secondary
+		:border-top 1px lighten($black, 5%) solid
 
 .section--page-header
 	:background $black

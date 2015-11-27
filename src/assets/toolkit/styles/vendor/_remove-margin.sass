@@ -1,0 +1,9 @@
+// Remove the top margin from the first line items.
+// This is set differently for each layout configuration.
+=remove-margin($total : 1, $location: top)
+	$count: 1
+	@while $count < $total + 1
+		&:nth-of-type(#{$count})
+			:margin-#{$location} 0
+
+		$count: $count + 1

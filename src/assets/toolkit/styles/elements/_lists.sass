@@ -18,9 +18,16 @@
 		:list-style-type disc
 		:margin-left 1em
 
+	&inline li
+		:display inline-block
+
+	&social-icons li
+		:margin-right 24px
+
+		&:last-child
+			:margin-right 0
 
 // List Items
 .list-item--subtext
 	:display block
 	:font-size calc(100% - 4px) // 4px smaller than parent
-

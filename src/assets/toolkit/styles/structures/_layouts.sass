@@ -11,13 +11,15 @@
 		:display inline-block
 		:vertical-align top
 
-	.column
-		:margin-bottom 48px
-		
+	.column	
 		+display-for(xs sm)
-			:margin-bottom 24px
+			:margin-bottom 0
+			//:margin-bottom 24px
 
-	.row--title
+		&:not(:first-of-type)
+			:margin-top 48px
+
+	header.row--title
 		:margin-bottom 48px
 
 		+make-column(26)
@@ -31,11 +33,15 @@
 	&full
 		> .column
 			+make-column(40)
+			+remove-margin(1)
 
 	&half
 		> .column
 			+make-column(19)
-			
+		
+			+display-for(md lg xl)
+				+remove-margin(2)
+
 			+display-for(xs sm)
 				+make-column(40)
 				+make-gutter(0,0)
@@ -44,12 +50,18 @@
 				+make-gutter(0,1)
 				+display-for(xs sm)
 					+make-gutter(0,0)
+
 			&:nth-of-type(2n+2)
 				+make-gutter(1,0)
 				+display-for(xs sm)
 					+make-gutter(0,0)
 
+
 	&two-thirds
+		.column
+			+display-for(md lg xl)
+				+remove-margin(2)
+
 		> .column:first-of-type:last-of-type
 			+make-column(26)
 			+make-gutter(0,14)
@@ -75,6 +87,13 @@
 
 
 	&two-thirds-reverse
+		.column
+			+display-for(xs sm)
+				+remove-margin(1)
+	
+			+display-for(md lg xl)
+				+remove-margin(2)
+		
 		> .column:first-of-type:last-of-type
 			+make-column(26)
 			+make-gutter(14,0)
@@ -107,20 +126,18 @@
 				+make-column(40)
 				+make-gutter(0,0)
 
-			.layout--half
+			> .layout--half
 				> .column
 					+make-column(12,26)
-					
+
 					+display-for(xs sm md)
 						+make-column(26,26)
 						+make-gutter(0,0)
 
 					&:nth-of-type(2n+1)
-	
 						+make-gutter(0,1,26)
 						+display-for(xs sm md)
 							+make-gutter(0,0)
-
 
 					&:nth-of-type(2n+2)
 						+make-gutter(1,0,26)
@@ -132,11 +149,21 @@
 		.column
 			+make-column(12)
 			+make-gutter(0,2)
+			
+			+display-for(lg xl)
+				+remove-margin(3)
+		
+			+display-for(md)
+				+remove-margin(2)
 
 			+display-for(md)
 				+make-column(19)
 				+make-gutter(0,1)
-
+	
+			+display-for(xs sm)
+				+make-column(40)
+				+make-gutter(0,0)
+	
 		.column:nth-of-type(3n+2)
 			+display-for(md)
 				+make-gutter(1,0)
@@ -149,10 +176,6 @@
 			+display-for(md)
 				+make-column(40)
 
-		.column
-			+display-for(xs sm)
-				+make-column(40)
-				+make-gutter(0,0)
 
 // .thirds--first-column-special
 // 	> .column:nth-of-type(2n+4)

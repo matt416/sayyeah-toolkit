@@ -1,0 +1,29 @@
+.image
+	:position relative
+	:width 200px
+	:height 200px
+	:margin-bottom -24px
+	:position relative
+	:background-color rgba(255,255,255,0.4)
+
+.image--fade:after,
+	:content ''
+	:width 100px
+	:height 100%
+	:position absolute
+	:top 0
+
+.fade--right:after
+	:right 0
+	:background-image linear-gradient(to right, rgba($yellow,0), $yellow)
+
+.section--secondary .fade--right:after
+	:background-image linear-gradient(to right, rgba($black,0), $black)
+
+.fade--left:after
+	:left 0
+	:background-image linear-gradient(to left, rgba($yellow,0), $yellow)
+
+.section--secondary .fade--left:after
+	:background-image linear-gradient(to left, rgba($black,0), $black)
+
