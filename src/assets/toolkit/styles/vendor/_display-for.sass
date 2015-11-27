@@ -1,0 +1,35 @@
+=display-for($size: false)
+	@each $screen in $size
+		@if $is-toolkit
+			@if $screen == xl
+				@at-root body.xl &
+					@content
+			@else if $screen == lg
+				@at-root body.lg &
+					@content
+			@if $screen == md
+				@at-root body.md &
+					@content
+			@else if $screen == sm
+				@at-root body.sm &
+					@content
+			@else if $screen == xs
+				@at-root body.xs &
+					@content
+
+		@else
+			@if $screen == xl
+				@media screen and (min-width: 1170px)
+					@content
+			@else if $screen == lg
+				@media screen and (min-width: 960px) and (max-width: 1169px)
+					@content
+			@if $screen == md
+				@media screen and (min-width: 768px) and (max-width: 959px)
+					@content
+			@else if $screen == sm
+				@media screen and (min-width: 500px) and (max-width: 767px)
+					@content
+			@else if $screen == xs
+				@media screen and (max-width: 499px)
+					@content

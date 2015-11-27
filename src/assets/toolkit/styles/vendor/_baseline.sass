@@ -1,0 +1,15 @@
+// Baseline Correction Using Padding Adjustment
+@function strip-unit($number)
+	@if type-of($number) == 'number' and not unitless($number)
+		@return $number / ($number * 0 + 1);
+	@return $number;
+
+@function baseline($num, $all...)
+	@if length($num) == 1
+		@return (strip-unit($num)+1)+px $num (strip-unit($num)-1)+px
+	@else if length($num) == 2
+		@return (strip-unit(nth($num,1))+1)+px nth($num,2) (strip-unit(nth($num,1))-1)+px
+	@else if length($num) == 3
+		@return (strip-unit(nth($num,1))+1)+px nth($num,2) (strip-unit(nth($num,3))-1)+px
+	@else
+		@return (strip-unit(nth($num,1))+1)+px nth($num,2) (strip-unit(nth($num,3))-1)+px nth($num,4)

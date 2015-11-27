@@ -1,0 +1,10 @@
+=background-gradient($colors, $stops...)
+	$from : nth($colors,1)
+	$to : nth($colors,2)
+	:background-color $from
+
+	@if length($stops) > 0
+		:background-image linear-gradient(to bottom, $from nth($stops,1), $to nth($stops,2))
+
+	@else 
+		:background-image linear-gradient(to bottom, $from, $to)

@@ -1,0 +1,26 @@
+.list
+	:margin-bottom 24px
+
+
+.list li
+	:list-style-position outside
+	:margin-bottom 16px
+
+	&:last-of-type
+		:margin-bottom 0
+
+.list--
+	&numbered li
+		:list-style-type decimal
+		:margin-left 1em
+
+	&bulleted li
+		:list-style-type disc
+		:margin-left 1em
+
+
+// List Items
+.list-item--subtext
+	:display block
+	:font-size calc(100% - 4px) // 4px smaller than parent
+

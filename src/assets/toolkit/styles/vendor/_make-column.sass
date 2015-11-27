@@ -1,0 +1,21 @@
+$grid-base : 40
+
+=make-column($columns, $grid : $grid-base)
+	:box-sizing border-box
+	:width percentage($columns / $grid)
+
+=make-gutter($left-gutter : 0, $right-gutter : 0, $grid : $grid-base)
+	:margin-left percentage($left-gutter / $grid)
+	:margin-right percentage($right-gutter / $grid)
+
+
+// @function strip-units($number)
+// 	@return $number / ($number * 0 + 1)
+
+// =make-column($columns, $grid : $grid-base)
+// 	:box-sizing border-box
+// 	:width (strip-units($columns / $grid)*100)#{'vw'}
+
+// =make-gutter($left-gutter : 0, $right-gutter : 0, $grid : $grid-base)
+// 	:margin-left (strip-units($left-gutter / $grid)*100)#{'vw'}
+// 	:margin-right (strip-units($right-gutter / $grid)*100)#{'vw'}

@@ -1,0 +1,95 @@
+.f-item-group
+  +clearfix
+
+  :margin-bottom 24px
+  :padding-bottom 0
+  //:border-bottom 1px solid color(light)
+
+  &:last-child
+    :border-bottom 0
+    :margin-bottom 0
+
+  & ~ &
+    :margin-top 0
+
+  & > &
+    //:padding-bottom 1.5rem
+    :margin-bottom 16px
+    :border-bottom 0
+    :padding 8px 0 8px 24px
+    :border-left 2px #E6E6E6 solid
+
+    &:first-of-type
+      :margin-top 0
+
+    &:last-child
+      :margin-bottom 0
+      
+      //:padding-bottom 0
+
+.f-item-code
+  :border 1px #d9d9d9 solid
+  :border-top none
+  :border-bottom-left-radius 3px
+  :border-bottom-right-radius 3px
+
+.f-item-preview
+  +clearfix
+  :overflow auto
+  :border 1px #d9d9d9 solid
+  :padding 23px
+  :border-top-left-radius 3px
+  :border-top-right-radius 3px
+  :background #FCD900
+
+.f-item-border-bottom
+  :border-bottom 1px solid color(light)
+
+.f-item-heading-group
+  +clearfix
+  :margin-top 72px
+  :margin-bottom 24px
+  :vertical-align middle
+
+.f-item-group .f-item-group > .f-item-heading-group
+  :margin-top 0  
+
+.f-item-heading
+  :margin-top 0
+  :margin-bottom 0
+  :display inline-block
+  :vertical-align middle
+  :line-height 1
+
+.f-item-controls
+  :display inline-block
+  :vertical-align middle
+  :margin-left 0.5rem
+
+  .f-control
+    :width 0.875rem
+    :height 0.875rem
+    :display block
+    :float left
+
+    &:hover
+      use
+        :fill color(normal)
+
+    use
+      :fill color(light)
+
+.f-item-hidden
+  :display none
+
+.f-item-notes
+  :max-width 580px
+  :font-size 0.875rem
+  
+  p
+    :line-height 1.5
+    :margin-top 0
+    :margin-bottom 8px
+
+    &:last-child
+      :margin-bottom 24px

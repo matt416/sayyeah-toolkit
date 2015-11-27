@@ -1,0 +1,31 @@
+---
+notes: |
+  The `.layout--two-thirds-reverse` is the same as `.layout--two-thirds` but with the larger column coming second.
+
+  In this example we show how this column works with a nested layout of `.layout--half`
+
+---
+<div class="layout layout--two-thirds-reverse">
+	<div class="column">
+		{{> headers.header-two }}
+		{{> headers.header-three }}
+		{{> paragraphs.standard-paragraph }}
+	</div>
+	
+	<div class="column">
+		<div class="layout layout--half">
+			<div class="column">
+				{{> headers.header-three }}
+				{{> lists.subtext-list }}
+			</div>
+			<div class="column">
+				{{> headers.header-three }}
+				{{> lists.subtext-list }}
+			</div>	
+			<div class="column">
+				{{> headers.header-three }}
+				{{> lists.subtext-list }}
+			</div>
+		</div>
+	</div>
+</div>

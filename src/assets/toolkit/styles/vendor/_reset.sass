@@ -1,0 +1,109 @@
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video
+	:margin 0
+	:padding 0
+	:border 0
+	:font inherit
+	:font-size 100%
+	:vertical-align baseline
+
+* 
+	:box-sizing border-box
+
+html
+	:line-height 1
+
+ol, ul, li
+	:list-style none
+
+table
+	:border-collapse collapse
+	:border-spacing 0
+
+caption, td, th
+	:text-align left
+	:font-weight 400
+	:vertical-align middle
+
+blockquote, q
+	:quotes none
+
+blockquote
+	&:after, &:before
+		:content ""
+		:content none
+
+q
+	&:after, &:before
+		:content ""
+		:content none
+
+a img
+	:border none
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary
+	:display block
+
+=hide-text
+	text-indent: -9999em * (12px / 1em)
+	overflow: hidden
+	text-align: left
+
+
+input, button, %reset-input-appearance
+	:appearance none
+	:box-sizing border-box
+	:display inline-block
+	:margin 0
+	:outline none
+
+
+[data-svg]
+	+hide-text
+
+*:last-child
+	:margin-bottom 0 !important
+
+html
+	:-webkit-font-smoothing antialiased
+	:-moz-osx-font-smoothing grayscale
+	//:overflow hidden
+	:min-height 100%
+
+.hide
+	:display none !important
+
+.clearfix
+	+clear
+
+
+//-> Useful Bits
+.hidden
+	:display none
+
+//-> Size Size Detection
+
+
+#screensize
+	+hide-text
+	:height 0
+	:width 0
+	:overflow hidden
+	:position absolute
+	:bottom 0
+	:left 0
+	:z-index 1
+
+	+display-for(xs)
+		:z-index 1000
+
+	+display-for(sm)
+		:z-index 2000
+
+	+display-for(md)
+		:z-index 3000
+
+	+display-for(lg)
+		:z-index 4000
+
+	+display-for(xl)
+		:z-index 5000

@@ -1,0 +1,83 @@
+@function text-color($color)
+	@if (lightness( $color ) > 40)
+		@return darken($color, 40%);
+	@else
+		@return lighten($color, 100%)
+
+
+.button
+	@extend %reset-input-appearance
+	:background-color $black
+	:border 1px transparent solid
+	:color text-color($black)
+	:cursor pointer
+	:font-size 16px
+	:font-family $font-family--header
+	:font-weight bold
+	:line-height $line-height--default
+	:margin 0 0 24px
+	:padding 7px 16px 4px
+	:border-radius 3px
+
+	&:active
+		:background-color lighten($black, 7%)
+
+	// &:active, &.active
+	// 	:background-color #F2F2F2
+	// 	:box-shadow inset 0 0 3px 0 rgba(0,0,0,0.1)
+	// 	:border-color #C6C6C6
+	// 	:color $black
+
+.button--
+	&secondary
+		:background-color $yellow-dirty
+		:color text-color($yellow-dirty)
+
+		&:active
+			:background-color lighten($yellow-dirty, 1.5%)
+
+
+	&tertiary
+		:border-color darken($yellow, 7%)//$yellow-dirty
+		:background-color lighten($yellow, 10%) //$yellow-pale
+		:color darken($yellow, 50%)
+
+		&:active
+			:background-color lighten($yellow, 18%)
+
+.button--
+	&large
+		:padding-left 18px
+		:padding-right 18px
+		:font-size 20px
+
+	&icon
+		:font-size 16px
+		:line-height 21px
+
+
+.button + .button,
+.button + .button-segments
+	:margin-left 8px
+
+// Section based styles
+//
+.section--secondary
+	.button
+		:border-color rgba(255,255,255,0.4)
+		:color #FFF
+		:background-color transparent
+
+		&secondary
+			:background-color $yellow-dirty
+			:color $black
+
+		&tertiary
+			:border-color $yellow-dirty
+			:background-color $yellow-pale
+			:color $black
+
+.section--page-header
+	.button
+		:background-color $yellow
+		:color $black

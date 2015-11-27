@@ -1,0 +1,17 @@
+.clients-list
+	+remove-whitespace
+	:margin-bottom 24px
+
+	li
+		:border 1px $yellow-dirty solid
+		:background-color $yellow-pale
+		:color $black
+
+		:display inline-block
+		:padding 24px
+		:text-align center
+		+make-column(7.2)
+		+make-gutter(0,1)
+
+		&:last-of-type
+			+make-gutter(0,0)

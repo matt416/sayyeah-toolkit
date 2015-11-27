@@ -1,0 +1,45 @@
+.resource-items
+	:width 100%
+	+remove-whitespace
+
+.resource-item
+	:display inline-block
+	:margin-bottom 72px
+	:vertical-align top
+	
+	+make-column(19)
+	+display-for(xs sm)
+		+make-column(40)
+		+make-gutter(0,0)
+
+	&:nth-of-type(2n+1)
+		+make-gutter(0,1)
+		+display-for(xs sm)
+			+make-gutter(0,0)
+
+	&:nth-of-type(2n+2)
+		+make-gutter(1,0)
+		+display-for(xs sm)
+			+make-gutter(0,0)
+
+	
+	> h3
+		:padding-top 12px
+	
+	h3 + p
+		:margin-top -12px
+
+	.item--image
+		:float left
+		:margin-right 24px
+		:width 160px
+		:height 210px
+
+		+display-for(sm md)
+			:width 140px
+			:height ceil(140px * 1.3125)
+
+
+		+display-for(xs)
+			:width 120px
+			:height ceil(120px * 1.3125)

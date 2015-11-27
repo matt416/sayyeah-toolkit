@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>{{title}}</title>
+
+	{{#if fabricator}}
+		<link rel="stylesheet" href="{{baseurl}}/assets/fabricator/styles/f.css">
+		<link rel="stylesheet" href="{{baseurl}}/assets/toolkit/styles/styles-toolkit.css">
+	{{else}}
+		<link rel="stylesheet" href="{{baseurl}}/assets/toolkit/styles/styles.css">
+		<link rel="stylesheet" href="{{baseurl}}/assets/toolkit/styles/symbols.css">
+	{{/if}}
+
+	<!-- toolkit styles -->
+	
+	<!-- /toolkit styles -->
+
+	<!-- FONTS -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+	{{> symbols }}
+
+	{{#if fabricator}}
+		{{#if viewport }}{{> y-viewport-controls }}{{/if}}
+		{{> f-icons}}
+		{{> f-menu}}
+		<div class="f-container">
+			{{> f-control-bar}}
+	{{/if}}
+
+
+
+	{% body %}
+
+
+	{{#if fabricator}}
+		</div>
+	<script src="{{baseurl}}/assets/fabricator/scripts/f.js"></script>
+	{{/if}}
+
+	<!-- toolkit scripts
+	<script src="{{baseurl}}/assets/toolkit/scripts/app.js"></script>
+	/toolkit scripts -->
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+=remove-whitespace($reset-font-size : false)
+	:font-size 0
+
+	@if $reset-font-size
+		> *
+			:font-size $reset-font-size
+
+	@else
+		> *
+			:font-size $font-size--default
