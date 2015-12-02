@@ -1,0 +1,18 @@
+{{> symbols }}
+<% _.each( icons, function( icon ){ %>
+	<div class="icon">
+		<div class="f-item-heading-group">
+			<h2 class="f-item-heading">#<%= icon.id %></h2><!-- data-f-toggle="labels" -->
+		</div>
+		<div class="f-icon-wrapper">
+			<svg role="img" class="<%= icon.id %>"><use xlink:href="#<%= icon.id %>"></use></svg>
+		</div>
+		<div class="f-item-code" style="display:none;">
+			<pre>
+				<code class="language-markup"id="code-<%= icon.id %>"><%= _.escape('<svg role="img" class="') %><%= icon.id %><%= _.escape('">') %>
+				<%= _.escape('<use xlink:href="#') %><%= icon.id %><%= _.escape('"></use>') %>
+				<%= _.escape('</svg>') %></code>
+			</pre>
+		</div>
+	</div>
+<% }); %>

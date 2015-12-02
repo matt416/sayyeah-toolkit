@@ -5,25 +5,8 @@
 .resource-item
 	:display inline-block
 	:margin-top 72px
-	:vertical-align top
-	+remove-margin(2)
-	
-	+make-column(19)
-	+display-for(xs sm)
-		+make-column(40)
-		+make-gutter(0,0)
-
-	&:nth-of-type(2n+1)
-		+make-gutter(0,1)
-		+display-for(xs sm)
-			+make-gutter(0,0)
-
-	&:nth-of-type(2n+2)
-		+make-gutter(1,0)
-		+display-for(xs sm)
-			+make-gutter(0,0)
-
-	
+	:vertical-align top	
+		
 	> h3
 		:padding-top 12px
 	
@@ -44,3 +27,49 @@
 		+display-for(xs)
 			:width 120px
 			:height ceil(120px * 1.3125)
+
+	.item--presentation 
+		:display block
+		:max-width 100%
+		:margin-bottom 12px
+
+.items--half
+	.resource-item
+		+remove-margin(2)
+		+make-column(19)
+		+display-for(xs sm)
+			+make-column(40)
+			+make-gutter(0,0)
+
+		&:nth-of-type(2n+1)
+			+make-gutter(0,1)
+			+display-for(xs sm)
+				+make-gutter(0,0)
+
+		&:nth-of-type(2n+2)
+			+make-gutter(1,0)
+			+display-for(xs sm)
+				+make-gutter(0,0)
+
+.items--thirds
+	.resource-item
+		+remove-margin(3)
+		+make-column(12)
+		+display-for(xs sm)
+			+make-column(40)
+			+make-gutter(0,0)
+
+		&:nth-of-type(2n+1)
+			+make-gutter(0,2)
+			+display-for(xs sm)
+				+make-gutter(0,0)
+
+		&:nth-of-type(2n+2)
+			+make-gutter(0,2)
+			+display-for(xs sm)
+				+make-gutter(0,0)
+
+		&:nth-of-type(2n+3)
+			+make-gutter(0,0)
+			+display-for(xs sm)
+				+make-gutter(0,0)

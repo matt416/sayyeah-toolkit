@@ -1,13 +1,27 @@
 // Headers
 
 h1, h2, h3, h4, h5, h6
-	:display inline-block
+	//:display inline-block
 
 h1
+	// Used for site logo in header
+	:display inline-block
 	:font-family $font-family--header
 	:font-size $font-size--header + 4px
 	:font-weight bold
-	:margin-bottom 18px
+
+	+display-for(xs)
+		:display block
+
+	a
+		:display block
+
+	svg
+		:display block
+		
+		+display-for(xs)
+			:fill $yellow !important
+			:margin 0 auto
 
 h2
 	:font-family $font-family--header
@@ -22,7 +36,7 @@ h3
 	:margin-bottom 18px
 
 h4
-	:color $grey
+	:color lighten($black, 15%)
 	:font-family $font-family--paragraph
 	:font-size 14px
 	:font-weight bold
@@ -40,6 +54,8 @@ h2 + .layout
 h2 + h3
 	//:margin-top -4px
 
+h3 + h4
+	:margin-top -8px
 
 // Include additional padding on headers when columns fall in a row
 .column + .column > h2
@@ -48,12 +64,12 @@ h2 + h3
 
 
 // Section Styles
-.section--page-header
+.section.as--page-header
 	h2
-		:color white
+		:color $yellow
 		:font-size calc(100% + 10px)
 
 	h3
-		:color $yellow
+		:color white
 		:font-size calc(100% + 2px)
 		:font-weight normal

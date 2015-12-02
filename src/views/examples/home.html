@@ -1,4 +1,7 @@
-<div class="section section--page-header">
+<nav class="section section--secondary as--page-header">
+	<div class="layout layout--full as--page-menu">
+		{{> menus.primary-menu }}
+	</div>
 	<div class="layout layout--two-thirds">
 		<div class="column">
 			<h2>Is your digital product delivering maximum value to your business?</h2>
@@ -6,13 +9,13 @@
 			<a href="#" class="button button--large">Find out how</a>
 		</div>
 	</div>
-</div>
+</nav>
 
-<div class="section section--primary">
+<section class="section section--primary">
 	<div class="layout layout--two-thirds">
 		<div class="column">
 			<h2>Experience Counts</h2>
-			<p class="p--large">Deliver digital products that make a bottom line difference with Toronto's multichannel experience design studio, Say Yeah!</p>
+			<p class="set--text-large">Deliver digital products that make a bottom line difference with Toronto's multichannel experience design studio, Say Yeah!</p>
 		</div>
 	</div>
 	<div class="layout layout--full">
@@ -38,9 +41,11 @@
 			</ul>
 		</div>
 	</div>
-</div>
+</section>
 
-<div class="section section--primary">
+<section class="section section--primary set--pennant">
+	<div class="pennant pennant--large pennant-needs">{{> svg id="pennant-needs" with="sprite--inline fg-color-black" }}</div>
+
 	<div class="layout layout--two-thirds">
 		<div class="column">
 			<h2>Great products meet customer needs, every step of the way.</h2>
@@ -50,9 +55,11 @@
 			<a href="#" class="button">Learn more about our approach</a>
 		</div>
 	</div>
-</div>
+</section>
 
-<div class="section section--primary">
+<section class="section section--primary set--pennant">
+	<div class="pennant pennant--large pennant-services"><svg class="pennant-services sprite--inline fg-color--black"><use xlink:href="#pennant-services"></use></svg></div>
+
 	<div class="layout layout--two-thirds-reverse">
 		<div class="column">
 			<h2>The right mix of services.</h2>
@@ -102,40 +109,11 @@
 			</div>
 		</div>
 	</div>
-</div>
-<div class="section section--primary">
-	<div class="layout layout--full">
-		
-		<header class="row--title">
-			<h2>Books</h2>
-			<p>Essential best practices and how-to guides for digital product managers, product marketers, and entrepreneurs.</p>
-		</header>
+</section>
 
-		<div class="column">
-			<ul class="resource-items">
-				<li class="resource-item">
-					<svg class="book-effective-landing-pages-a-strategic-foundation item--image">
-						<use xlink:href="#book-effective-landing-pages-a-strategic-foundation" />
-					</svg>
-					<h3>For New Products</h3>
-					<p>You’re working on a new product idea.</p>
-					<button class="button">Download for free</button>
-				</li>
-		
-				<li class="resource-item">
-					<svg class="item--image">
-						<use xlink:href="#book-effective-landing-pages-a-strategic-foundation" />
-					</svg>
-					<h3>For New Products</h3>
-					<p>You’re working on a new product idea.</p>
-					<button class="button">Download for free</button>
-				</li>
-			</ul>
-		</div>
+<section class="section section--primary set--pennant">
+	<div class="pennant pennant--large pennant-solving"><svg class="pennant-solving sprite--inline fg-color--black"><use xlink:href="#pennant-solving"></use></svg></div>
 
-	</div>
-</div>
-<div class="section section--primary">
 	<div class="layout layout--two-thirds-reverse">
 		<div class="column">
 			<h2>Measurable problem solving.</h2>
@@ -166,9 +144,9 @@
 			</div>
 		</div>
 	</div>
-</div>
+</section>
 
-<div class="section section--secondary section--tight-bottom">
+<section class="section section--secondary set--padding-bottom-zero">
 	<div class="layout layout--two-thirds-reverse">
 		<div class="column">
 			<h2>See the results.</h2>
@@ -184,9 +162,9 @@
 			<div class="image image--fade fade--right device device--web"></div>
 		</div>
 	</div>
-</div>
+</section>
 
-<div class="section section--primary">
+<section class="section section--primary">
 	<div class="layout layout--thirds">
 		<header class="row--title">
 			<h2>Get Started</h2>
@@ -234,59 +212,10 @@
 			<a href="#" class="button">Let's get started</a>
 
 		</div>
+	</div>
+</section>
 
-	</div>
-</div>
-
-<div class="section section--secondary as--footer-navigation">
-	<div class="layout layout--thirds">
-		<ul class="list column">
-			<li><a href="#">Home</a></li>
-			<li><a href="#">Services</a></li>
-			<li><a href="#">Resources</a></li>
-			<li><a href="#">Work</a></li>
-			<li><a href="#">About Us</a></li>
-			<li><a href="#">Contact Us</a></li>
-		</ul>
-		<ul class="list column">
-			<li><a href="#">New Product Questionnaire</a></li>
-			<li><a href="#">Existing Product Questionnaire</a></li>
-			<li><a href="#">Accessibility Book</a></li>
-			<li><a href="#">Effective Landing Pages Book</a></li>
-			<li><a href="#">Product Insight Mailing List</a></li>
-		</ul>
-		<ul class="list column">
-			<li><a href="#">Accessibility Statement</a></li>
-			<li><a href="#">Privacy Policy</a></li>
-		</ul>
-	</div>
-</div>
-<div class="section section--secondary">
-	<div class="layout layout--thirds">
-		<div class="column">
-			<ul>
-				<li><svg class="icon-phone sprite--inline fg-color--white"><use xlink:href="#icon-phone" /></svg><span class="sprite--label">877.SAY.YEAH (729.9324)</span></li>
-				<li><span class="sprite--label">416.642.9694</span></li>
-			</ul>
-		</div>
-		<div class="column">
-			<svg class="icon-mail sprite--inline fg-color--white"><use xlink:href="#icon-mail" /></svg><a href="mailto:hello@sayyeah.com">hello@sayyeah.com</a>
-		</div>
-		<div class="column">
-			<ul class="list list--inline list--social-icons">
-				<li><a href="#"><svg class="social-twitter fg-color--white sprite--round bg-color--twitter"><use xlink:href="#social-twitter"></use></svg></a></li>
-				<li><a href="#"><svg class="social-linkedin fg-color--white sprite--round bg-color--linkedin"><use xlink:href="#social-linkedin"></use></svg></a></li>
-				<li><a href="#"><svg class="social-facebook fg-color--white sprite--round bg-color--facebook"><use xlink:href="#social-facebook"></use></svg></a></li>
-				<li><a href="#"><svg class="social-behance fg-color--white sprite--round bg-color--behance"><use xlink:href="#social-behance"></use></svg></a></li>
-			</ul>
-		</div>
-	</div>
-</div>
-<div class="section section--secondary as--footer-copyright">
-	<div class="layout layout--full">
-		<div class="column">&copy; 2008-2015. Say Yeah Inc. All rights reserved.</div>
-	</div>
-</div>
+{{> footer }}
 
 
 

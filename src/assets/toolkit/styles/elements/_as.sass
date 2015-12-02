@@ -1,10 +1,32 @@
+.section.as--page-header
+	+display-for(xs)
+		:padding-top 24px
+
+	:background $black
+	:color rgba(255,255,255,0.9)
+
+	a
+		:color rgba(255,255,255,0.9)
+
+.layout.as--page-menu
+	:margin-bottom 120px
+	:position relative
+	:z-index 1000
+
+	+display-for(xs)
+		:margin-bottom 48px
+		:padding-bottom 24px
+		:border-bottom 1px lighten($black, 5%) solid
+
+	.column
+		+remove-whitespace
+
 .section.as--footer-copyright
 	:padding 16px
 	:text-align center
 
 	.column 
 		:font-size $font-size--paragraph-small - 2px
-
 
 .section.as--footer-navigation
 	.column

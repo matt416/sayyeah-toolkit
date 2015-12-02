@@ -2,7 +2,8 @@
 	:width 100%
 	:margin 0
 	:padding 60px 0
-	:overflow hidden
+	:position relative
+	//:overflow hidden
 
 .section--primary
 	:background $yellow
@@ -18,12 +19,18 @@
 	& + .section--secondary
 		:border-top 1px lighten($black, 5%) solid
 
-.section--page-header
-	:background $black
-	:color rgba(255,255,255,0.9)
-
 .section--tight-bottom
 	:padding-bottom 0
+
+.section--dim:before
+	:content ""
+	:width 100%
+	:height 100%
+	:z-index 500
+	:position absolute
+	:background rgba(0,0,0,0.5)
+	:top 0
+	:left 0
 
 // Special styling for elements that are used in each section can be found in their element style file.
 // For example, if you're looking to update the style for a .button when used in .section--secondary, goto the buttons.[sass|scss] file.

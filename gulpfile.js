@@ -133,13 +133,15 @@ gulp.task('svgs', function () {
 		.pipe(symbols({
 			templates : [
 				'src/assets/fabricator/symbols/symbols.html',
+				'src/assets/fabricator/symbols/symbols-preview.html',
 				'src/assets/fabricator/symbols/symbols.css',
 				'default-svg'//,
 				//'default-css',
 				//'default-demo'
 			]
 		}))
-		.pipe(gulpif( /[.]html$/, gulp.dest('src/materials/symbols')))
+		.pipe(gulpif( /symbols.html$/, gulp.dest('src/views/layouts/includes')))
+		.pipe(gulpif( /symbols-preview.html$/, gulp.dest('src/materials/symbols')))
 		.pipe(gulpif( /[.]css$/, gulp.dest(config.dest + '/assets/toolkit/styles')))
 		.pipe(gulpif( /[.]svg$/, gulp.dest(config.dest + '/assets/toolkit/images')));
 });
