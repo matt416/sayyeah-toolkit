@@ -20,6 +20,7 @@ var symbols = require('gulp-svg-symbols');
 var svgmin = require('gulp-svgmin');
 var path = require('path');
 var sassData = require('fabricator-sass-data');
+var sftp = require('gulp-sftp');
 
 // Local Modules
 var helpers = require('../helpers'); // Extra Handlebars Helpers
@@ -113,6 +114,17 @@ gulp.task('scripts', function (done) {
 		}
 		done();
 	});
+});
+
+// Transfer the stylesheet to the stage server for testing
+gulp.task('sftp', ['assemble'], function () {
+    return gulp.src('dist/assets/toolkit/**/*')
+        .pipe(sftp({
+            host: '104.236.0.23',
+            user: 'sayyeah',
+            port: '9324',
+            remotePath: '/var/www/sayyeah-dev/assets'
+        }));
 });
 
 // images
@@ -234,3 +246,9 @@ gulp.task('default', ['clean'], function () {
 	});
 
 });
+
+gulp.task('sync', function(){
+	runSequence('sftp', function(){
+
+	})
+})
