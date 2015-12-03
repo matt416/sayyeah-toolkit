@@ -4,6 +4,12 @@
 </div>
 {{/if}}
 
+{{#if data.id}}
+	{{#each (modifiers @root.elements data.id) }}
+		<button class="button" data-modify="{{target}}" data-classes="{{classes}}">{{capitalizeEach @key}}</button>	
+	{{/each}}
+{{/if}}
+
 <div class="f-item-preview{{#if data.wrap_preview}} {{{data.wrap_preview}}}{{/if}}">
 	<div class="viewport md">
 		{{{material @key @root}}}

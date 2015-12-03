@@ -21,6 +21,7 @@ var svgmin = require('gulp-svgmin');
 var path = require('path');
 var sassData = require('fabricator-sass-data');
 var sftp = require('gulp-sftp');
+var insert = require('gulp-insert');
 
 // Local Modules
 var helpers = require('../helpers'); // Extra Handlebars Helpers
@@ -43,9 +44,16 @@ var config = {
 			toolkit: 'src/assets/toolkit/fonts/**/*'
 		},
 		images: 'src/assets/toolkit/images/**/*',
-		svgs: 'src/assets/toolkit/svgs/**/*.svg',
+
+		svgs : [
+		{	'name' : 'resources',
+			'path' : 'src/assets/toolkit/svgs/resources/*.svg' },
+		{	'name' : 'global',
+			'path' : 'src/assets/toolkit/svgs/global/*.svg'	}],		
+
 		views: 'src/toolkit/views/*.html'
 	},
+
 	dest: 'dist'
 };
 
@@ -117,7 +125,7 @@ gulp.task('scripts', function (done) {
 });
 
 // Transfer the stylesheet to the stage server for testing
-gulp.task('sftp', ['assemble'], function () {
+gulp.task('sftp', function () {
     return gulp.src('dist/assets/toolkit/**/*')
         .pipe(sftp({
             host: '104.236.0.23',
@@ -140,26 +148,37 @@ gulp.task('favicon', function () {
 });
 
 gulp.task('svgs', function () {
-	return gulp.src(config.src.svgs)
-		.pipe(svgmin())
-		.pipe(symbols({
-			templates : [
-				'src/assets/fabricator/symbols/symbols.html',
-				'src/assets/fabricator/symbols/symbols-preview.html',
-				'src/assets/fabricator/symbols/symbols.css',
-				'default-svg'//,
-				//'default-css',
-				//'default-demo'
-			]
-		}))
-		.pipe(gulpif( /symbols.html$/, gulp.dest('src/views/layouts/includes')))
-		.pipe(gulpif( /symbols-preview.html$/, gulp.dest('src/materials/symbols')))
-		.pipe(gulpif( /[.]css$/, gulp.dest(config.dest + '/assets/toolkit/styles')))
-		.pipe(gulpif( /[.]svg$/, gulp.dest(config.dest + '/assets/toolkit/images')));
+	for(var i = 0; i < config.src.svgs.length; i++) {
+		gulp.src(config.src.svgs[i].path)
+			.pipe(svgmin())
+			.pipe(symbols({
+				templates : [
+					'src/assets/fabricator/symbols/symbols.html',
+					'src/assets/fabricator/symbols/symbols-preview.html',
+					'src/assets/fabricator/symbols/_symbols.sass',
+					'default-svg'
+				]
+			}))
+			.pipe(gulpif( 'symbols.html', rename( 'symbols-' + config.src.svgs[i].name +'.html' )))
+			.pipe(gulpif( 'symbols-' + config.src.svgs[i].name +'.html', gulp.dest('src/views/layouts/includes')))
+			
+			.pipe(gulpif( 'symbols-preview.html', insert.prepend( '{{>symbols-' + config.src.svgs[i].name + '}}' )))
+			.pipe(gulpif( 'symbols-preview.html', rename(config.src.svgs[i].name +'.html')))
+			.pipe(gulpif( config.src.svgs[i].name +'.html', gulp.dest('src/materials/symbols')))
+
+			.pipe(gulpif( /[.]sass$/, rename('_symbols-' + config.src.svgs[i].name +'.sass')))
+			.pipe(gulpif( /[.]sass$/, gulp.dest('src/assets/toolkit/styles/variables')))
+
+			.pipe(gulpif( /[.]svg$/, rename(config.src.svgs[i].name +'.svg')))
+			.pipe(gulpif( /[.]svg$/, gulp.dest(config.dest + '/assets/toolkit/images')));
+	};
+
+	return;
+
 });
 
 // assemble
-gulp.task('assemble', ['sass-data'], function (done) {
+gulp.task('assemble', function (done) {
 	assemble({
 		helpers: helpers,
 		logErrors: config.dev
@@ -233,13 +252,11 @@ gulp.task('default', ['clean'], function () {
 		'scripts',
 		'images',
 		'svgs',
-		'fonts',
-		'sass-data',
-		'assemble'
+		'fonts'		
 	];
 
 	// run build
-	runSequence(tasks, function () {
+	runSequence(tasks, 'sass-data', 'assemble', function () {
 		if (config.dev) {
 			gulp.start('serve');
 		}

@@ -1,0 +1,21 @@
+{
+	"buttons" : {
+		"modifiers" : {
+			"regular" : {
+				"description" : "",
+				"classes" : "",
+				"target" : ".button"
+			},
+			"secondary" : {
+				"description" : "",
+				"classes" : "button--secondary",
+				"target" : ".button"
+			},
+			"tertiary" : {
+				"description" : "",
+				"classes" : "button--tertiary",
+				"target" : ".button"
+			}
+		}
+	}
+}

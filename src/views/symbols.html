@@ -6,6 +6,10 @@ fabricator: true
 
 {{#each materials.symbols.items}}
 
-    {{{material @key @root}}}
+	<div class="f-item-heading-group">
+		<h2 class="f-item-heading">{{name}}</h2><!-- data-f-toggle="labels" -->
+	</div>
+	
+	{{{material @key @root}}}
 
 {{/each}}
