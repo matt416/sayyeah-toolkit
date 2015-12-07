@@ -4,6 +4,9 @@
 
 $settings: (theme: light, accent: hsl(0, 0%, 46%), menu-width: 14rem)
 
+$is-toolkit: false
+@import ../../toolkit/styles/vendor/_all
+
 @import partials/variables
 @import partials/code
 @import partials/color-chips
@@ -12,6 +15,7 @@ $settings: (theme: light, accent: hsl(0, 0%, 46%), menu-width: 14rem)
 @import partials/layout
 @import partials/menu
 @import partials/viewport
+@import partials/symbols
 
 body
 	:background #FFF !important

@@ -1,5 +1,6 @@
 'use strict';
 
+var $ = require('jquery');
 require('./prism');
 require('./viewport');
 

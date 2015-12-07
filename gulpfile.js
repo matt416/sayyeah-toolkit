@@ -22,6 +22,7 @@ var path = require('path');
 var sassData = require('fabricator-sass-data');
 var sftp = require('gulp-sftp');
 var insert = require('gulp-insert');
+var dss = require('gulp-dss');
 
 // Local Modules
 var helpers = require('../helpers'); // Extra Handlebars Helpers
@@ -61,6 +62,16 @@ var config = {
 // webpack
 var webpackConfig = require('./webpack.config')(config);
 var webpackCompiler = webpack(webpackConfig);
+
+gulp.task('dss', function(){
+
+	return gulp.src('src/assets/toolkit/styles/style.sass')
+		.pipe(dss({
+			output: 'index.html',
+      		templatePath: path.join(__dirname, 'templates')
+		}))
+		.pipe(gulp.dest('src'))
+})
 
 gulp.task('sass-data', function () {
     return gulp.src('src/assets/toolkit/styles/variables/**/*.{sass,scss}')
@@ -122,17 +133,6 @@ gulp.task('scripts', function (done) {
 		}
 		done();
 	});
-});
-
-// Transfer the stylesheet to the stage server for testing
-gulp.task('sftp', function () {
-    return gulp.src('dist/assets/toolkit/**/*')
-        .pipe(sftp({
-            host: '104.236.0.23',
-            user: 'sayyeah',
-            port: '9324',
-            remotePath: '/var/www/sayyeah-dev/assets'
-        }));
 });
 
 // images
@@ -243,6 +243,30 @@ gulp.task('serve', function () {
 });
 
 
+// Transfer the stylesheet to the stage server for testing
+gulp.task('sftp', function () {
+    return gulp.src('dist/assets/toolkit/**/*')
+        .pipe(sftp({
+            host: '104.236.0.23',
+            user: 'sayyeah',
+            port: '9324',
+            remotePath: '/var/www/sayyeah-dev/assets'
+        }));
+});
+
+
+// Transfer the stylesheet to the stage server for testing
+gulp.task('run:deploy', function () {
+    return gulp.src('dist/**/*')
+        .pipe(sftp({
+            host: '104.236.0.23',
+            user: 'sayyeah',
+            port: '9324',
+            remotePath: '/var/www/sayyeah-styleguide'
+        }));
+});
+
+
 // default build task
 gulp.task('default', ['clean'], function () {
 
@@ -263,6 +287,21 @@ gulp.task('default', ['clean'], function () {
 	});
 
 });
+
+gulp.task('deploy', ['clean'], function(){
+	var tasks = [
+		'styles',
+		'scripts',
+		'images',
+		'svgs',
+		'fonts'		
+	];
+
+	// run build
+	runSequence(tasks, 'sass-data', 'assemble', 'run:deploy', function () {
+		
+	});
+})
 
 gulp.task('sync', function(){
 	runSequence('sftp', function(){

@@ -1,15 +1,10 @@
+<div class="symbols">
 <% _.each( icons, function( icon ){ %>
-	<div class="icon">
-		<div class="f-symbol-name">#<%= icon.id %>
+	<div class="symbol">
 		<div class="f-symbol-wrapper">
 			<svg role="img" class="<%= icon.id %>"><use xlink:href="#<%= icon.id %>"></use></svg>
 		</div>
-		<div class="f-item-code" style="display:none;">
-			<pre>
-				<code class="language-markup"id="code-<%= icon.id %>"><%= _.escape('<svg role="img" class="') %><%= icon.id %><%= _.escape('">') %>
-				<%= _.escape('<use xlink:href="#') %><%= icon.id %><%= _.escape('"></use>') %>
-				<%= _.escape('</svg>') %></code>
-			</pre>
-		</div>
+		<p class="f-symbol-name">#<%= icon.id %></p>
 	</div>
 <% }); %>
+</div>

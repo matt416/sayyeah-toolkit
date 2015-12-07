@@ -1,0 +1,35 @@
+.symbols
+	:display flex
+	:flex-wrap wrap
+	//:flex-direction row
+	+remove-whitespace(20px)
+
+	.symbol
+		+make-column(9.25)
+		+make-gutter(0,1)
+		:border 1px #E5E5E5 solid
+		:flex-grow 1
+		:display inline-block
+		:vertical-align top
+		:text-align center
+		:min-height 200px
+		:margin-bottom 24px
+		:padding 23px 23px 15px
+
+		.f-symbol-name
+			:font-size 14px
+			:text-align left
+			:padding-top 24px
+
+		&:nth-of-type(4n+4)
+			+make-gutter(0,0)
+
+		&:last-of-type
+			+make-gutter(0,0)
+			:margin-bottom 24px !important
+		
+		svg
+			:display inline-block
+			:vertical-align middle
+			:height 200px		
+			:max-width 100%
