@@ -30,6 +30,7 @@ var helpers = require('../helpers'); // Extra Handlebars Helpers
 // configuration
 var config = {
 	dev: gutil.env.dev,
+	user: gutil.env.user || 'sayyeah',
 	src: {
 		scripts: {
 			fabricator: './src/assets/fabricator/scripts/fabricator.js',
@@ -260,7 +261,7 @@ gulp.task('run:deploy', function () {
     return gulp.src('dist/**/*')
         .pipe(sftp({
             host: '104.236.0.23',
-            user: 'jordan',
+            user: config.user,
             port: '9324',
             remotePath: '/var/www/sayyeah-styleguide'
         }));
