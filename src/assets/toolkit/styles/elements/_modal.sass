@@ -1,0 +1,26 @@
+.modal
+	:width 500px
+	:padding 25px
+	:background white
+	:border-radius 3px 
+	@if $is-toolkit == 'false'
+		:position fixed
+		:left 50%
+		:transform translateX(-50%)
+	a 
+		:text-decoration underline
+	span 
+		:float right
+		:font-size 30px	
+	+display-for(xs)
+		:width 90%
+		:text-align center
+		.as--hidden
+			:display block
+			:text-align left
+			:margin -25px -25px 24px -25px
+			:padding 10px 20px
+			:border-bottom 1px solid $grey
+			:line-height 26px
+
+					

@@ -7,6 +7,15 @@
 
 	a
 		:color rgba(255,255,255,0.9)
+	h3.as--page-header-secondary
+		:color $yellow
+	.as--header-image
+		:float left
+		:margin-right 72px
+		+display-for(xs)
+			:display none	
+		& + h2
+			:margin-top 24px		
 
 .layout.as--page-menu
 	:margin-bottom 120px
@@ -32,3 +41,5 @@
 	.column
 		:font-size $font-size--paragraph-small - 2px
 		:margin-bottom 0
+.as--hidden
+	:display none		
