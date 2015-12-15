@@ -260,7 +260,7 @@ gulp.task('run:deploy', function () {
     return gulp.src('dist/**/*')
         .pipe(sftp({
             host: '104.236.0.23',
-            user: 'sayyeah',
+            user: 'jordan',
             port: '9324',
             remotePath: '/var/www/sayyeah-styleguide'
         }));
