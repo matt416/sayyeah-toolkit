@@ -3,15 +3,27 @@
 	:padding 25px
 	:background white
 	:border-radius 3px 
-	@if $is-toolkit == 'false'
+	@if $is-toolkit != true
 		:position fixed
 		:left 50%
-		:transform translateX(-50%)
+		:top 50%
+		:transform translate(-50%, -50%)
+		:z-index 1000
 	a 
 		:text-decoration underline
 	span 
 		:float right
 		:font-size 30px	
+		:cursor pointer
+	p[data=close]
+		:position absolute 
+		:top 20px
+		:right 20px	
+		:display inline-block
+		:cursor pointer
+		:z-index 100
+	.expanded-form
+		:display none	
 	+display-for(xs)
 		:width 90%
 		:text-align center
@@ -22,5 +34,9 @@
 			:padding 10px 20px
 			:border-bottom 1px solid $grey
 			:line-height 26px
+.modal.modal--small			
+	.column	
+		:width 90%
+		:margin 20px 5% 0px 5%
 
 					

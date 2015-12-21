@@ -21,11 +21,25 @@
 	&inline li
 		:display inline-block
 
+	&inline-spaced li	
+		:margin-right 6px
+		&:last-of-type
+			:margin-right 0
+		
 	&social-icons li
 		:margin-right 24px
 
 		&:last-child
 			:margin-right 0
+	&social-icons-small 
+		:float right
+		:display inline-block
+		+display-for(sm xs)
+			:display block
+			:float none
+		li
+			// :margin-bottom 0
+
 
 // List Items
 .list-item--subtext

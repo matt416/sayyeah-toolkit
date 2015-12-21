@@ -6,6 +6,11 @@
 	:display inline-block
 	:margin-top 72px
 	:vertical-align top	
+	+display-for(sm xs)
+		:margin-bottom 48px
+	&:last-of-type
+		+display-for(xs)
+			:margin-bottom 0	
 		
 	> h3
 		:padding-top 12px
@@ -40,6 +45,7 @@
 		+display-for(xs sm)
 			+make-column(40)
 			+make-gutter(0,0)
+			
 
 		&:nth-of-type(2n+1)
 			+make-gutter(0,1)
@@ -50,6 +56,7 @@
 			+make-gutter(1,0)
 			+display-for(xs sm)
 				+make-gutter(0,0)
+			
 
 .items--thirds
 	.resource-item

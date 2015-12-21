@@ -1,6 +1,6 @@
 .clients-list
 	+remove-whitespace
-	:margin-bottom 24px
+	:margin-bottom 6px
 
 	li
 		:border 1px $yellow-dirty solid
@@ -10,8 +10,25 @@
 		:display inline-block
 		:padding 24px
 		:text-align center
-		+make-column(7.2)
-		+make-gutter(0,1)
+		:margin-bottom 18px
+		+display-for(md lg xl)
+			+make-column(7.2)
+			+make-gutter(0,1)
 
-		&:last-of-type
-			+make-gutter(0,0)
+			&:nth-of-type(5n)
+				+make-gutter(0,0)
+
+		+display-for(sm)
+			+make-column(12)
+			+make-gutter(0, 1.33)
+
+			&:nth-of-type(3n)
+				+make-gutter(0,0)
+
+		+display-for(xs)
+			+make-column(19)		
+			+make-gutter(0, 2)
+
+			&:nth-of-type(2n)
+				+make-gutter(0,0)			
+

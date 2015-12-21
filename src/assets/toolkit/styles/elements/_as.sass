@@ -15,7 +15,20 @@
 		+display-for(xs)
 			:display none	
 		& + h2
-			:margin-top 24px		
+			:margin-top 24px
+.section.as--image-header
+	:background url(../images/sy-header-background.jpg)			
+	:background-repeat no-repeat
+	:background-position 50%
+	+display-for(xs)
+		:background $black	
+body.about-us			
+	.section.as--image-header
+		:background url(../images/matt-and-lee.jpg)
+		:background-repeat no-repeat
+		:background-position 50%
+		+display-for(xs)
+			:background $black	
 
 .layout.as--page-menu
 	:margin-bottom 120px
@@ -42,4 +55,19 @@
 		:font-size $font-size--paragraph-small - 2px
 		:margin-bottom 0
 .as--hidden
-	:display none		
+	:display none	
+.as--post-date
+	:display inline-block
+	:margin-bottom 24px
+	:font-weight 500
+.as--post-content
+	a 
+		:text-decoration underline
+	a.button 
+		:text-decoration none	
+.column p.as--pennant-left
+	:margin-left 76px
+.column svg.as--pennant-left
+	:position absolute
+	:top 0
+	:left 0			
