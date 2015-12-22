@@ -28,3 +28,88 @@
 	:display inline-block
 .set--relative
 	:position relative 
+.set--text-right
+	:text-align right	
+.column.set--image-quarter	
+	img 
+		:transform translateX(0)
+		+display-for(xl)
+			&:nth-of-type(4n+1)
+				:left 0
+			&:nth-of-type(4n+2)
+				:left 290px	
+			&:nth-of-type(4n+3)
+				:left 580px	
+			&:nth-of-type(4n+4)
+				:left 870px
+		+display-for(md lg)
+			&:nth-of-type(4n+1)
+				:left 0
+			&:nth-of-type(4n+2)
+				:left 185px	
+			&:nth-of-type(4n+3)
+				:left 455px	
+			&:nth-of-type(4n+4)
+				:display none
+		+display-for(sm)
+			&:nth-of-type(4n+1)
+				:left 0
+			&:nth-of-type(4n+2)
+				:left 185px	
+			&:nth-of-type(4n+3)
+				:display none	
+			&:nth-of-type(4n+4)
+				:display none
+		+display-for(xs)
+			&:nth-of-type(4n+1)
+				:transform translateX(-50%)
+			&:nth-of-type(4n+2)
+				:display none	
+			&:nth-of-type(4n+3)
+				:display none	
+			&:nth-of-type(4n+4)
+				:display none
+.column.set--image-half
+	&:nth-of-type(2n+2)
+		+display-for(sm xs)
+			:display none
+	img 
+		:transform translateX(0)
+		+display-for(xl)
+			&:nth-of-type(2n+1)
+				:left 0
+			&:nth-of-type(2n+2)
+				:left 290px	
+		+display-for(lg)
+			&:nth-of-type(2n+1)
+				:left 0
+			&:nth-of-type(2n+2)
+				:left 200px		
+		+display-for(md)
+			&:nth-of-type(2n+1)
+				:left 0
+			&:nth-of-type(2n+2)
+				:left 90px	
+		+display-for(sm xs)
+			&:nth-of-type(2n+1)
+				:display none
+			&:nth-of-type(2n+2)
+				:left 50%
+				:transform translateX(-50%)	
+.column.set--image-half-with-screen
+	img 
+		:transform translateX(0)
+		+display-for(md lg xl)
+			&:nth-of-type(2n+1)
+				:left 0
+			&:nth-of-type(2n+2)
+				:left 100%
+				:transform translateX(-100%)
+		+display-for(sm xs)
+			&:nth-of-type(2n+1)
+				:display none
+			&:nth-of-type(2n+2)
+				:left 50%
+				:transform translateX(-50%)	
+
+

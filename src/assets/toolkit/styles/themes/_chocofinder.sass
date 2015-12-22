@@ -1,0 +1,137 @@
+$brand-path: "projects/chocofinder/"
+
+.theme-chocofinder
+	#header
+		// +heroImg($brand-path + "bkgr_headline.jpg")
+
+	.client-intro
+		.title 
+			:background rgba(64, 34, 17, 0.9)
+
+	.title
+		+make-columns(20) 
+		+make-gutter(0,20)
+
+		+display-for(xs sm md)
+			+make-columns(40)
+
+	.col
+		+make-columns(19)
+		
+		&.first
+			+make-gutter(0,2)
+
+			+display-for(xs sm)
+				+make-gutter(0,0)
+
+		+display-for(xs sm)
+			+make-columns(40)
+		&.column-001
+			+make-gutter(0,2)
+			+display-for(xs sm md)
+				+make-gutter(0,0)	
+
+
+	#all-the-chocolate-you-could-dream-of-finding
+		:background #402211
+		:color white
+		:padding-bottom 0
+		h2, h3
+			:color #fcb514
+		h3
+			+inline-block
+			:font-weight bold
+			:margin 0 auto 12px
+		.group-002 .col
+			.device
+				// +display-for(lg xl)
+				// 	:max-width 60%
+				+display-for(md)
+					:max-width 60%
+
+				+display-for(sm)
+					:max-width inherit
+			+display-for(sm md)
+				+make-column(6, 20px)
+
+			+display-for(xs)
+				+make-column(6, 5px)
+		.visual-aid
+			:height 400px
+			:overflow hidden
+			:position relative
+			+display-for(md)
+				:height 360px
+
+			+display-for(sm)
+				:height 300px
+
+			+display-for(xs)
+				:height 200px
+
+		.media-001
+			+responsive-image($brand_path + "all_the_chocolate_you_could_dream_of_finding_phone1.png", 290px, 593px)
+			:left 0
+			:position absolute
+		.media-002
+			+responsive-image($brand_path + "all_the_chocolate_you_could_dream_of_finding_phone2.png", 290px, 593px)
+			:right 0
+			:position absolute
+		.media-003
+			+responsive-image($brand_path + "all_the_chocolate_you_could_dream_of_finding_phone3.png", 290px, 593px)
+			:left 0
+			:position absolute
+		.media-004
+			+responsive-image($brand_path + "all_the_chocolate_you_could_dream_of_finding_phone4.png", 290px, 593px)
+			:right 0
+			:position absolute
+
+	#life-after-the-doc
+		:background #f48045
+		:color #402211
+		:padding-bottom 0
+		.visual-aid
+			:position relative
+		.media-001
+			+responsive-image($brand_path + "life_after_the_doc_web1.jpg", 800px, 813px)
+			+include-titlebar(#a66f54)
+			:margin 0
+			:max-height 400px
+			//:margin 0 auto
+			+display-for(xs)
+				:display none
+				//:width 120%
+		.media-002
+			+responsive-image($brand_path + "life_after_the_doc_phone1.png", 290px, 593px)
+			//:margin 0 auto
+			:position absolute
+			:top -120px
+			:right 0
+			:max-height 520px
+			:z-index 51
+			+display-for(sm md)
+				:top 80px
+				:right -40px
+
+			+display-for(xs)
+				:position relative
+				:margin 0 auto
+				:top 0
+				:right none
+				:max-height 300px
+
+	#more-than-just-behind-the-scenes
+		:background white
+		:color #402211
+		:padding-bottom 0
+		.column-002
+			+inline-block(bottom)
+		.visual-aid
+		.media-001
+			+responsive-image($brand_path + "more_than_just_behind_the_scenes_web1.jpg", 570px, 474px)
+			+include-titlebar(#a66f54)
+			:margin 0 auto
+			+display-for(xs)
+				:width 120%
+
+

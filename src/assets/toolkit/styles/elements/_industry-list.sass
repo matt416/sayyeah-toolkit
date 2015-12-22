@@ -1,0 +1,19 @@
+.industry-list
+	+remove-whitespace
+	li 
+		:display inline-block
+		:padding 8px 0
+
+		+display-for(md lg xl)
+			+make-column(12)
+			+make-gutter(0, 1.33)
+
+			&:nth-of-type(3n)
+				+make-gutter(0,0)
+				:text-align right
+			
+			&:nth-of-type(3n + 2)
+				:text-align center
+		+display-for(sm xs)	
+			+make-column(40)
+			+make-gutter(0,0)	

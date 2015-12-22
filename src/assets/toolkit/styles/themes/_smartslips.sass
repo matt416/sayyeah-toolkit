@@ -1,0 +1,178 @@
+$brand-path: "projects/smartslips/"
+
+.theme-smartslips
+	#header
+		// +heroImg($brand-path + "bkgr_headline.jpg")
+
+	.client-intro
+		.title
+			:background rgba(0, 121, 176, 0.9)
+	
+	.title
+		+make-columns(20) 
+		+make-gutter(0,20)
+
+		+display-for(xs sm md)
+			+make-columns(40)
+
+	.col
+		+make-columns(19)
+		
+		&.first
+			+make-gutter(0,2)
+
+			+display-for(xs sm)
+				+make-gutter(0,0)
+
+		+display-for(xs sm)
+			+make-columns(40)
+
+	#responding-to-opportunities
+		:background #3fa0ec
+		:color #00263b
+		:padding-bottom 0
+
+		h2, h3
+			:color white
+		h3
+			+inline-block
+			:font-weight bold
+			:margin 0 auto 12px
+		.white-lable-title
+			:position absolute
+			:top -30px
+			:left 47%	
+
+		.visual-aid
+			+inline-block(bottom)
+			+make-columns(19)
+
+			&:first-of-type
+				+make-gutter(0,2)
+
+
+		.media-001
+			+responsive-image($brand_path + "responding_to_opportunities_web1.png", 570px, 380px)
+			+include-titlebar(#9dcef2)
+			:margin 0
+			:max-height 400px
+			//:margin 0 auto
+			+display-for(xs)
+				//:display none
+				//:width 120%
+		.media-002
+		
+			+responsive-image($brand_path + "responding_to_opportunities_web2.png", 570px, 380px)
+			+include-titlebar(#9dcef2)
+			:margin 0
+			:height 500px
+			// :max-height 400px
+			//:margin 0 auto
+			:position absolute
+			:top 0
+			:left 47%
+			:z-index 1000
+			:width 50%
+			+display-for(md sm xs)
+				:width 60%
+				//:display none
+				//:width 120%
+	#smartslips-client-quote
+		:background #00263b	
+		.quote 
+			:font-weight 900		
+			:text-align center
+			:max-width 600px
+			:margin 0 auto
+			:line-height 1.5
+			:font-style italic
+			:margin-bottom 18px
+		.quote-author
+			:text-align center
+			:color #9dcef2
+
+	#understanding-user-needs
+		:background white
+		:color #00263b
+		:padding-bottom 0
+		.col
+			&.last
+				:margin-left 50px
+
+		.visual-aid
+			:height 400px
+			:overflow hidden
+			:position relative
+
+			+display-for(xl)
+				+make-columns(20)
+				+make-offset(0, 2)
+
+			+display-for(md)
+				:height 360px
+
+			+display-for(sm)
+				:height 300px
+
+			+display-for(xs)
+				:height 500px
+
+		.media-001
+			+responsive-image($brand_path + "understanding_user_needs_phone1.png", 290px, 593px)
+			:left 0
+			:position absolute
+			+display-for(xs sm)
+				:display none
+		.media-002
+			+responsive-image($brand_path + "understanding_user_needs_phone2.png", 290px, 593px)
+			:left 0
+			:right 0
+			:margin 0 auto
+			:position absolute
+			+display-for(sm)
+				:left 0
+				:right inherit
+				:margin 0
+
+			+display-for(xs)
+				:left 0
+				:right 0
+				:top 0
+				:margin 0 auto
+		.media-003
+			+responsive-image($brand_path + "understanding_user_needs_phone3.png", 290px, 593px)
+			:right 0
+			:position absolute
+			+display-for(xs)
+				:left 0
+				:right 0
+				:top 200px
+				:margin 0 auto
+
+	#marketing
+		:background white
+		:color #00263b
+		:padding-bottom 0
+		.visual-aid
+		.media-001
+			+responsive-image($brand_path + "marketing_web1.jpg", 1146px, 720px)
+			+include-titlebar(#00263b)
+			:margin 0
+			// :max-height 400px
+			:margin 0 auto
+			+display-for(xs)
+				//:display none
+				//:width 120%
+
+
+	#success-in-every-possible-way
+		:background #00263b
+		:color #9dcef2
+		:padding-bottom 60px
+		.col 
+			img
+				:width 150px
+				:display block
+				:margin 0 auto
+			.microsoft
+				:width 250px	

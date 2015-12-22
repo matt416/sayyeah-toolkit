@@ -1,0 +1,68 @@
+body.chocofinder
+	.image-column-half
+		+display-for(lg xl)
+			:bottom -400px
+		+display-for(md)	
+			:bottom -600px
+body.curate-science
+	.as--image-container-with-text
+		:height 520px	
+		+display-for(sm xs)
+			:height 300px
+		img 
+			+display-for(sm xs)
+				:display none
+	.image-column-half
+		+display-for(lg xl)
+			:bottom -270px			
+		+display-for(md)
+			:bottom -350px 
+		+display-for(sm xs)
+			:bottom -150px
+	.as--image-container-hidden
+		+display-for(sm xs)
+			:display none	
+body.kipu
+	.image-only-column.as--image-container
+		img 
+			:transform translateX(0)
+			+display-for(lg xl)
+				&:last-of-type
+					:left 0
+					:bottom -185px
+			+display-for(xl)		
+				&:first-of-type
+					:left 290px	
+			+display-for(lg)		
+				&:first-of-type
+					:left 200px	
+			+display-for(md)
+				&:last-of-type
+					:left 0
+					:bottom -300px			
+				&:first-of-type
+					:left 80px
+			+display-for(sm xs)
+				&:last-of-type
+					:left 50%
+					:transform translateX(-50%)
+					:bottom -300px			
+				&:first-of-type
+					:display none	
+	section.section--tertiary
+		:color #322F59			
+body.smart-slips
+	.set--image-half
+		img
+			&:first-of-type
+				:bottom -150px 
+			&:last-of-type
+				:left 400px
+				:bottom -100px
+				+display-for(xl)
+					:left 500px
+				+display-for(md sm xs)
+					:display none
+	.hidden-md
+		+display-for(md sm xs)
+			:display none				

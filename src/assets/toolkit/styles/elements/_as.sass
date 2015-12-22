@@ -20,15 +20,9 @@
 	:background url(../images/sy-header-background.jpg)			
 	:background-repeat no-repeat
 	:background-position 50%
+	:background-color #1A1A1A
 	+display-for(xs)
 		:background $black	
-body.about-us			
-	.section.as--image-header
-		:background url(../images/matt-and-lee.jpg)
-		:background-repeat no-repeat
-		:background-position 50%
-		+display-for(xs)
-			:background $black	
 
 .layout.as--page-menu
 	:margin-bottom 120px
@@ -70,4 +64,23 @@ body.about-us
 .column svg.as--pennant-left
 	:position absolute
 	:top 0
-	:left 0			
+	:left 0
+li.as--case-study
+	:background-color white	
+.column.as--image-container
+	:height 350px
+	:position relative
+	+display-for(md)
+		:height 250px
+	+display-for(sm)
+		:height 120px
+	+display-for(xs)
+		:height 90px		
+	img 
+		:position absolute
+		:left 50%
+		:transform translateX(-50%)
+.column.as--image-container-large
+	+display-for(sm xs)
+		:height 250px
+

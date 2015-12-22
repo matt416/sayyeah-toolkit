@@ -1,0 +1,207 @@
+$brand-path: "projects/tourismtoronto/"
+
+.theme-tourismtoronto
+	#header
+		// +heroImg($brand-path + "bkgr_headline.jpg")
+
+	.client-intro
+		.title
+			:background rgba(16, 163, 207, 0.9)
+	
+	.title
+		+make-columns(20) 
+		+make-gutter(0,20)
+
+		+display-for(xs sm md)
+			+make-columns(40)
+
+	.col
+		+make-columns(19)
+		
+		&.first
+			+make-gutter(0,2)
+
+			+display-for(xs sm)
+				+make-gutter(0,0)
+
+		+display-for(xs sm)
+			+make-columns(40)
+
+	#helping-everyone-to-an-insiders-view-of-toronto
+		:background white
+		:color #042b36
+		:padding-bottom 0
+
+		.col
+			+make-columns(1, 3)
+			+display-for(sm md)
+				+make-columns(1,2)
+
+			+display-for(xs)
+				+make-columns(40)
+		.column-002
+			:max-height 360px
+			+display-for(xs)
+				:height 340px
+		.column-003
+			+display-for(xs sm md)
+				:display none
+		.visual-aid
+			:position relative
+		
+		.visual-aid
+			:position relative
+			:margin-top 20px
+			:height 340px
+			+display-for(xs)
+				:height 500px
+
+			+display-for(xl)
+				+make-column(9, 20px)
+				+make-offset(1.5, 1.5)
+
+			+display-for(lg)
+				+make-column(10, 20px)
+				+make-offset(1, 1)
+		.media-001
+			+responsive-image($brand_path + "helping_everyone_to_an_insiders_view_of_toronto_phone1.png", 290px, 593px)
+			:margin 0 auto
+			:top 20px
+			:z-index 1
+			+display-for(xs)
+				:left 0
+				:right 0
+				:margin 0 auto
+				:z-index 5
+		.media-002
+			+responsive-image($brand_path + "helping_everyone_to_an_insiders_view_of_toronto_icons.png", 722px, 320px, 200%)
+			:max-width 600px
+			+display-for(xs sm md)
+				:display none
+
+	#improving-over-time
+		:background #042b36
+		:color white
+		:padding-bottom 0
+		.visual-aid
+			:height 380px
+			:position relative
+			:margin-top 20px
+			+display-for(xl)
+				+make-column(10, 20px)
+				+make-offset(1, 1)
+		.media-001
+			+responsive-image($brand_path + "improving_over_time_phone1.png", 290px, 445px)
+			:position absolute
+			:left 0
+			+display-for(xs sm)
+				:top 60px
+				:left -40px
+		.media-002
+			+responsive-image($brand_path + "improving_over_time_phone2.png", 290px, 445px)
+			:position absolute
+			:margin 0 auto
+			:left 0
+			:right 0
+			+display-for(xs sm)
+				:top 30px
+		.media-003
+			+responsive-image($brand_path + "improving_over_time_phone3.png", 290px, 445px)
+			:position absolute
+			:right 0
+			+display-for(xs sm)
+				:right -40px
+
+	#multiplatform-multichannel-collaboration-at-its-best
+		:background #f6f4e8
+		:color #403f3c
+		:padding-bottom 0
+		.title
+			+make-column(6, 20px)
+			+make-offset(0, 6)
+			+display-for(xs sm)
+				+make-column(12, 20px)
+				+make-offset
+		.column-002
+			+inline-block(bottom)
+		.visual-aid
+			:position relative
+			:min-height 412px
+			+display-for(xs)
+				+responsive-container($brand_path + "multiplatform_multichannel_collaboration_at_its_best_phone1.png", 508px, 512px)
+				//:height 300px
+
+			+display-for(xl)
+				+make-column(10, 20px)
+				+make-offset(1, 1)
+		.media-001
+			+responsive-image($brand_path + "multiplatform_multichannel_collaboration_at_its_best_phone1.png", 508px, 512px)
+			:position absolute
+			:bottom 0
+			//:top -100px
+			+display-for(xs sm)
+				:top 0
+				:bottom inherit
+				//:width 254px
+				//:max-width none
+				//:top 0
+				//:top 60px
+				//:left -40px
+
+	#taking-tourism-toronto-mobile-in-record-time
+		:background #10a3cf
+		:color white
+		:padding-bottom 0
+		.visual-aid
+			:position relative
+			:margin-top 20px
+			:height 340px
+			+display-for(xs)
+				:height 500px
+
+			+display-for(xl)
+				+make-column(9, 20px)
+				+make-offset(1.5, 1.5)
+
+			+display-for(lg)
+				+make-column(10, 20px)
+				+make-offset(1, 1)
+		.media-001
+			+responsive-image($brand_path + "taking_tourism_toronto_mobile_in_record_time_phone1.png", 348px, 370px)
+			:margin 0
+			:top 20px
+			//:margin 0 auto
+			:z-index 1
+			+display-for(xs)
+				:top 360px
+				:left 0
+				:right 0
+				:margin 0 auto
+				//:bottom 0
+				:z-index 5
+				//:left -80px
+		.media-002
+			+responsive-image($brand_path + "taking_tourism_toronto_mobile_in_record_time_phone2.png", 348px, 370px)
+			//:margin 0 auto
+			:position absolute
+			:top 0
+			:right 0
+			:left 0
+			:margin 0 auto
+			:z-index 3
+			+display-for(xs)
+				:top 0
+		.media-003
+			+responsive-image($brand_path + "taking_tourism_toronto_mobile_in_record_time_phone3.png", 348px, 370px)
+			:position absolute
+			:right 0
+			:top 20px
+			:z-index 2
+			+display-for(xs)
+				:left 0
+				:right 0
+				:margin 0 auto
+				:top 180px
+				:z-index 4
+				//:display none
+
