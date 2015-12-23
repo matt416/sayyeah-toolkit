@@ -65,4 +65,75 @@ body.smart-slips
 					:display none
 	.hidden-md
 		+display-for(md sm xs)
-			:display none				
+			:display none
+body.unata
+	.unata--background-image
+		:background-color #006eb4
+		:background url(../images/unata-bg-stripes.png)
+		:color white
+	.section--tertiary
+		:color #51565f
+	.section--tertiary.unata--text
+		:color #006eb4								
+	.set--image-half-with-screen				
+		img 
+			+display-for(sm xs)
+				&:nth-of-type(2n+1)
+					:display block
+					:left 50%
+					:transform translateX(-50%)
+				&:nth-of-type(2n+2)
+					:display none
+	.as--image-container-hidden
+		+display-for(sm xs)
+			:display none
+	.as--image-container-x-large							
+		+display-for(sm xs)
+			:height 450px
+	.image-center
+		img 
+			:top 50%
+			:left 50%
+			:transform translate(-50%, -50%)
+
+body.unata, body.tourism-toronto
+	.layout--thirds
+		.column	
+			+display-for(xs sm md)
+				&:nth-of-type(3n+3)
+					:display none
+			+display-for(xs sm)				
+				&:nth-of-type(3n+2)
+					:display none										
+body.tourism-toronto
+	.image-small
+		img
+			+display-for(xl lg) 
+				:bottom -150px	
+			+display-for(md)
+				:bottom -380px
+	.image-overlapped
+		div 
+			:position relative
+			:width 80%
+			:margin 0 auto
+			+display-for(sm xs)
+				:width 100%	
+		img 
+			:transform translateX(0)			
+			&:nth-of-type(3n+1)
+				:left 0
+				+display-for(lg xl)
+					:bottom -430px
+			&:nth-of-type(3n+2)
+				:transform translateX(-50%)	
+				:z-index 2
+				+display-for(lg xl)
+					:bottom -410px	
+				+display-for(md sm xs)
+					:display none	
+			&:nth-of-type(3n+3)
+				:left 100%
+				:transform translateX(-100%)	
+				+display-for(lg xl)
+					:bottom -430px	

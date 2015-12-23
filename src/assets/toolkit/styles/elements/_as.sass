@@ -83,4 +83,11 @@ li.as--case-study
 .column.as--image-container-large
 	+display-for(sm xs)
 		:height 250px
+.column.as--image-container-small
+	+display-for(xl lg md sm xs)
+		:height 150px	
+	img 
+		:top 50%
+		:left 50%
+		:transform translate(-50%, -50%)		
 
