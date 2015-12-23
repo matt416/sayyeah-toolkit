@@ -50,6 +50,10 @@ var config = {
 		svgs : [
 		{	'name' : 'resources',
 			'path' : 'src/assets/toolkit/svgs/resources/*.svg' },
+		{	'name' : 'clients',
+			'path' : 'src/assets/toolkit/svgs/clients/*.svg' },
+		{	'name' : 'publications',
+			'path' : 'src/assets/toolkit/svgs/publications/*.svg' },
 		{	'name' : 'global',
 			'path' : 'src/assets/toolkit/svgs/global/*.svg'	}],		
 
