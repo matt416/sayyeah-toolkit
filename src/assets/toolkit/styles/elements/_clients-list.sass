@@ -11,13 +11,21 @@
 		:padding 24px
 		:text-align center
 		:margin-bottom 18px
-		+display-for(md lg xl)
+		+display-for(xl)
 			+make-column(7.2)
 			+make-gutter(0,1)
 
 			&:nth-of-type(5n)
 				+make-gutter(0,0)
+		+display-for(md lg)
+			+make-column(9)
+			+make-gutter(0,1.33)
 
+			&:nth-of-type(4n)
+				+make-gutter(0,0)
+
+		+display-for(md sm)
+			:padding 0 24px		
 		+display-for(sm)
 			+make-column(12)
 			+make-gutter(0, 1.33)
