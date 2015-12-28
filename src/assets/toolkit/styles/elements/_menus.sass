@@ -70,14 +70,6 @@
 			:font-size 16px
 			:padding 5px 16px 3px
 			:width 100%
-	.current_page_parent
-		a 
-			:border-left 2px $yellow solid
-			:color $yellow
-			:padding-left 14px
-
-			&:hover
-				:color $yellow
 		&.active
 			a 
 				:border-left 2px $yellow solid
@@ -87,7 +79,8 @@
 				&:hover
 					:color $yellow
 
-
+.current-menu-item
+	:background red !important
 	// @extend %make-adaptive
 	// +display-for(xs sm)
 	// 	:width 100%
