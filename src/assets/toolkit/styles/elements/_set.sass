@@ -113,8 +113,9 @@
 				:transform translateX(-50%)	
 .set--aligned-middle
 	:vertical-align middle
-.set--text-padded	
-	:padding-bottom 16px
-	:margin-top 0 !important
+.set--text-padded
+	+display-for(sm xs)	
+		:padding-bottom 16px
+		:margin-top 0 !important
 
 
