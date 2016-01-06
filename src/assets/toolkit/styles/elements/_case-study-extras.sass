@@ -4,6 +4,8 @@ body.chocofinder
 			:bottom -400px
 		+display-for(md)	
 			:bottom -600px
+	.as--browser
+		:border-top 20px solid #a66f54
 body.curate-science
 	.as--image-container-with-text
 		:height 520px	
@@ -21,7 +23,9 @@ body.curate-science
 			:bottom -150px
 	.as--image-container-hidden
 		+display-for(sm xs)
-			:display none	
+			:display none
+	.as--browser
+		:border-top 20px solid #6D7580			
 body.kipu
 	.image-only-column.as--image-container
 		img 
@@ -50,7 +54,9 @@ body.kipu
 				&:first-of-type
 					:display none	
 	section.section--tertiary
-		:color #322F59			
+		:color #322F59	
+	.as--browser
+		:border-top 20px solid #322F59			
 body.smart-slips
 	.set--image-half
 		img
@@ -66,6 +72,10 @@ body.smart-slips
 	.hidden-md
 		+display-for(md sm xs)
 			:display none
+	.as--browser
+		:border-top 20px solid #00263b
+	.as--browser-secondary
+		:border-top 20px solid #9dcef2				
 body.unata
 	.unata--background-image
 		:background-color #006eb4
@@ -137,3 +147,7 @@ body.tourism-toronto
 				:transform translateX(-100%)	
 				+display-for(lg xl)
 					:bottom -430px	
+body.virgin-gaming, body.blog-to
+	.as--browser
+		:border-top 20px solid #666					
+					
