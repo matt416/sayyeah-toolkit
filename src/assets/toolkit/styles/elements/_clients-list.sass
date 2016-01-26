@@ -58,8 +58,13 @@
 				&:nth-of-type(5n+4)
 					:display none
 				svg
-					:height 118px	
+					:height 118px				
 		+display-for(xs)
 			li 
+				+make-column(19)
+				&:nth-of-type(5n+3)
+					:display none
+				&:nth-of-type(5n+2)
+					+make-gutter(0,0)
 				svg
-					:height 70px			
+					:height 170px			
