@@ -3,12 +3,14 @@
 	:padding 25px
 	:background white
 	:border-radius 3px 
+	:max-height 100vh
+	:overflow scroll
 	@if $is-toolkit != true
 		:position fixed
 		// :left 50%
 		// :top 50%
 		// :transform translate(-50%, -50%)
-		:z-index 1000
+		:z-index 1000	
 	a 
 		:text-decoration underline
 	span.close 
@@ -25,7 +27,7 @@
 	.expanded-form
 		:display none	
 	+display-for(xs)
-		:width 90%
+		:width 98%
 		:text-align center
 		.as--hidden
 			:display block

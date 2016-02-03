@@ -9,7 +9,7 @@
 		:margin-left -4px
 		:margin-top 24px
 
-	+display-for(xs)
+	+display-for(sm xs)
 		:text-align center
 
 	> li
@@ -19,11 +19,11 @@
 		&:first-of-type
 			:margin 0
 
-		+display-for(sm)
-			:margin 0 0 0 6px
-			:padding 7px 6px
+		// +display-for(sm)
+		// 	:margin 0 0 0 6px
+		// 	:padding 7px 6px
 		
-		+display-for(xs)
+		+display-for(sm xs)
 			:margin 4px 8px
 			:padding 7px 6px
 
@@ -32,10 +32,10 @@
 			:display block
 			:font-weight bold
 
-			+display-for(sm)
-				:font-size 18px
+			// +display-for(sm)
+			// 	:font-size 18px
 
-			+display-for(xs)
+			+display-for(sm xs)
 				:font-size 16px
 			
 		&.active
@@ -44,7 +44,8 @@
 				:border-bottom 2px #FFF solid
 		&:hover
 			.menu--submenu
-				:display block
+				+display-for(md lg xl)
+					:display block
 
 .menu--submenu
 	:position absolute

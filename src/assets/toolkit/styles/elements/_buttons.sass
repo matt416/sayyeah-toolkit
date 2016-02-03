@@ -9,7 +9,7 @@
 	@extend %reset-input-appearance
 	:background-color $black
 	:border 1px transparent solid
-	:color text-color($black)
+	:color $yellow
 	:cursor pointer
 	:font-size 16px
 	:font-family $font-family--header
@@ -21,6 +21,9 @@
 
 	&:active
 		:background-color lighten($black, 7%)
+.card 
+	.button, input[type=submit]
+		:color white
 
 	// &:active, &.active
 	// 	:background-color #F2F2F2
