@@ -140,10 +140,17 @@ li.as--case-study
 .as--case-study-header
 	:max-width 800px
 
+.as--hidden-xs	
+	+display-for(xs)
+		:display none
+		
 body.about-us
 	.as--page-menu
 		+display-for(lg xl)
 			:margin-bottom 320px
 
+		+display-for(md)
+			:margin-bottom 230px	
+	
 strong
 	:font-weight 700		

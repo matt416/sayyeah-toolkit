@@ -6,9 +6,39 @@
 		:border-right 1px solid rgba(0,0,0,.1)
 		:margin-right 0 !important
 		:width 50% !important
+		+display-for(xs)
+			:border-right none
+			:border-bottom 1px solid rgba(0,0,0,.1)
 		.or
 			:position absolute
 			:top 60%
 			:right -9px
 			:background white
 			:font-size 16px
+			+display-for(xs)
+				:right 50%
+				:top 95%
+				:padding 0 2px
+				:transform translateX(50%)
+.modal 
+	.column.as--svg-centre
+		+display-for(xs)
+			:width 100% !important	
+.modal-overlay
+	:position absolute
+	:height 100%
+	:width 100%
+	:top 0
+	:background rgba(0,0,0,0.8)
+	:z-index 100
+.modal#conversion-modal
+	:background $yellow	!important
+	h4
+		:font-size 18px
+		:color $black
+		:text-align center
+		:font-weight 400
+		:padding 0 10px
+	span
+		:background $yellow
+

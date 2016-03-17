@@ -58,10 +58,17 @@ body.kipu
 	.as--browser
 		:border-top 20px solid #322F59			
 body.smartslips
+	blockquote
+		+display-for(xs)
+			:padding 0 20px !important
 	.set--image-half
 		img
 			&:first-of-type
-				:bottom -150px 
+				:bottom -150px
+				+display-for(sm xs)
+					:display block	 
+					:left 0
+					:bottom -80px
 			&:last-of-type
 				:left 400px
 				:bottom -100px
@@ -69,6 +76,9 @@ body.smartslips
 					:left 500px
 				+display-for(md sm xs)
 					:display none
+	.as--image-container-large				
+		+display-for(xs)
+			:height 200px
 	.hidden-md
 		+display-for(md sm xs)
 			:display none
@@ -149,5 +159,15 @@ body.tourism-toronto
 					:bottom -430px	
 body.virgin-gaming, body.blog-to
 	.as--browser
-		:border-top 20px solid #666					
+		:border-top 20px solid #666	
+body.blog-to
+	.as--image-container						
+		+display-for(xs)
+			:height 200px
+	.as--image-short
+		+display-for(xs)
+			:height 100px
+	.as--image-container-large
+		+display-for(xs)
+			:height 300px				
 					
