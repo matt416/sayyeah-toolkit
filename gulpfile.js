@@ -111,6 +111,8 @@ gulp.task('styles:toolkit', function () {
 		.pipe(gulpif(!config.dev, csso()))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest(config.dest + '/assets/toolkit/styles'))
+		.pipe(gulp.dest('./theme'))
+
 		.pipe(gulpif(config.dev, reload({stream:true})));
 });
 

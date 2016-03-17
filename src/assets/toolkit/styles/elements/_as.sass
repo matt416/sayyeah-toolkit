@@ -1,21 +1,27 @@
 .section.as--page-header
-	+display-for(xs)
-		:padding-top 24px
-
 	:background $black
 	:color rgba(255,255,255,0.9)
 
+	+display-for(xs)
+		:padding-top 24px
+
 	a
 		:color rgba(255,255,255,0.9)
+
 	h3.as--page-header-secondary
 		:color $yellow
+
 	.as--header-image
 		:float left
 		:margin-right 72px
-		+display-for(xs)
-			:display none	
+			
 		& + h2
 			:margin-top 24px
+
+		+display-for(xs)
+			:display none
+
+
 .section.as--image-header
 	:background url(../images/sy-header-background.jpg)			
 	:background-repeat no-repeat
@@ -48,12 +54,15 @@
 	.column
 		:font-size $font-size--paragraph-small - 2px
 		:margin-bottom 0
+
 .as--hidden
-	:display none	
+	:display none
+
 .as--post-date
 	:display inline-block
 	:margin-bottom 24px
 	:font-weight 500
+
 .as--post-content
 	a 
 		:text-decoration underline
@@ -65,15 +74,19 @@
 	ul li
 		:list-style disc !important
 	ol li
-		:list-style decimal !important	
+		:list-style decimal !important
+
 .column p.as--pennant-left, .column div.as--pennant-left
 	:margin-left 76px
+
 .column svg.as--pennant-left
 	:position absolute
 	:top 0
 	:left 0
+
 li.as--case-study
-	:background-color white	
+	:background-color white
+
 .column.as--image-container
 	:height 350px
 	:position relative
@@ -82,14 +95,16 @@ li.as--case-study
 	+display-for(sm)
 		:height 120px
 	+display-for(xs)
-		:height 90px		
+		:height 90px
 	img 
 		:position absolute
 		:left 50%
 		:transform translateX(-50%)
+
 .column.as--image-container-large
 	+display-for(sm xs)
 		:height 250px
+
 .column.as--image-container-small
 	+display-for(xl lg md sm xs)
 		:height 150px	
@@ -97,6 +112,7 @@ li.as--case-study
 		:top 50%
 		:left 50%
 		:transform translate(-50%, -50%)
+
 .as--svg-centre
 	:position relative
 	:height 210px
@@ -107,33 +123,27 @@ li.as--case-study
 		:left 50%
 		:transform translate(-50%, -50%)
 		p
-			:font-size 14px	
+			:font-size 14px
+
 .as--browser
-	:border-radius 4px		
-.as--social-linkedin-small
+	:border-radius 4px
+
+.as--social-linkedin-small,
+.as--social-twitter-small,
+.as--social-facebook-small,
+.as--social-behance-small,
+.as--social-pinterest-small,
+.as--social-google-small
 	:width 30px
 	:height 30px
-.as--social-twitter-small			
-	:width 30px
-	:height 30px
-.as--social-facebook-small	
-	:width 30px
-	:height 30px
-.as--social-behance-small	
-	:width 30px
-	:height 30px
-.as--social-pinterest-small	
-	:width 30px
-	:height 30px
-.as--social-google-small	
-	:width 30px
-	:height 30px	
-.as--case-study-header	
+
+.as--case-study-header
 	:max-width 800px
+
 body.about-us
 	.as--page-menu
 		+display-for(lg xl)
 			:margin-bottom 320px
-	
+
 strong
 	:font-weight 700		

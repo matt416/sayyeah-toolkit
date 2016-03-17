@@ -7,11 +7,12 @@ h1
 	// Used for site logo in header
 	:display inline-block
 	:font-family $font-family--header
-	:font-size $font-size--header + 4px
+	:font-size 30px
 	:font-weight bold
 
 	+display-for(xs)
 		:display block
+		:font-size 24px
 
 	a
 		:display block
@@ -25,9 +26,13 @@ h1
 
 h2
 	:font-family $font-family--header
-	:font-size $font-size--header 
+	:font-size 26px
 	:font-weight bold
 	:margin-bottom 18px
+
+	+display-for(xs)
+		:font-size 20px
+
 
 h3
 	:font-family $font-family--header
@@ -68,6 +73,9 @@ h3 + h4
 	h2
 		:color $yellow
 		:font-size calc(100% + 10px)
+
+		+display-for(xs)
+			:font-size calc(100% + 4px)
 
 	h3
 		:color white
